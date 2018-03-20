@@ -14,6 +14,7 @@
             padding:20px;
             border: 10px dotted green;
             background-color: red;
+            position: relative;
         }
         .border{
             background-clip: border-box；
@@ -34,21 +35,26 @@
         .container{
             overflow: hidden;
         }
+        span{
+            position: absolute;
+            top:-40px;
+            left: 70px;
+        }
     </style>
 </head>
 <body>
     <section class="container">
         <h1>边框为虚线</h1>
-        <div class="default"></div>
-        <div class="border"></div>
-        <div class="padding"></div>
-        <div class="content"></div>
+        <div class="default"><span>默认值</span></div>
+        <div class="border"><span>border-box</span></div>
+        <div class="padding"><span>padding-box</span></div>
+        <div class="content"><span>content-box</span></div>
 </section>
     
     <h1>边框为实线</h1>
-    <div class="default solid"></div>
-    <div class="border solid"></div>
-    <div class="padding solid"></div>
-    <div class="content solid"></div>
+    <div class="default solid"><span>默认值</span></div>
+    <div class="border solid"><span>border-box</span></div>
+    <div class="padding solid"><span>padding-box</span></div>
+    <div class="content solid"><span>content-box</span></div>
 </body>
 </html>
