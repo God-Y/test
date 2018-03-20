@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            float: left;
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            padding:20px;
+            border: 10px dotted green;
+            background-color: red;
+        }
+        .border{
+            background-clip: border-box；
+        }
+        .padding{
+            background-clip: padding-box;
+        }
+        .content{
+            background-clip: content-box;
+        }
+        
+        .solid{
+            border: 10px solid;
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>边框为虚线</h1>
+        <div class="default"></div>
+        <div class="border"></div>
+        <div class="padding"></div>
+        <div class="content"></div>
+</section>
+    
+    <h1>边框为实线</h1>
+    <div class="default solid"></div>
+    <div class="border solid"></div>
+    <div class="padding solid"></div>
+    <div class="content solid"></div>
+</body>
+</html>
