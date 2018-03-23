@@ -8,7 +8,7 @@
     <style>
         div{
             background-color: gray;
-          font-size:0;
+        
         }
         h1{
             text-align: center;
@@ -50,8 +50,48 @@
             text-align: center;
             background-color: gray;
         }
+        .box3{
+            line-height: 200px;
+            text-align: center;
+            background-color: gray;
+        }
         .box2 img{
             vertical-align: middle;
+        }
+        .box-no{
+            background-color: gainsboro;
+            height: 300px;
+        }
+        main{
+            height: 300px;
+            background-color: aquamarine;
+            position: relative;
+           
+        }
+        .container{
+           
+            background-color: #d8d8d8;
+            font-size: 50px;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .container span{
+            background: brown;
+            font-size: 25px;
+        
+            
+        }
+        .container i{
+            background-color: blue;
+        }
+        main .hello{
+            color: #ffffff;
+        }
+        .single{
+            line-height: 200px;
+            background-color: aquamarine;
+            color:blue;
         }
     </style>
 </head>
@@ -60,20 +100,37 @@
     <div>
         <img src="../img/bgImg.png" alt="">x
     </div>
+    <h1>单行文本垂直居中</h1>
+       
+            <p class="single">为了更友好的用户体验，和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
+
+            <h1>图片水平垂直居中</h1>
+    
+            <div class="box2"> 
+                    <img src="../img/bgImg.png" alt="">        
+            </div>
+    <h1>未居中前的表现</h1>
+    <div class="box-no"> 
+        <p class="">为了更友好的用户体验，浏览器会尽可能快的展现内容，而不会等到文档所有内容到达才开始解析和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
+    </div>
     <h1>多行文字垂直居中</h1>
     <div class="box"> 
         <p class="text">为了更友好的用户体验，浏览器会尽可能快的展现内容，而不会等到文档所有内容到达才开始解析和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
     </div>
     <h1>多行文字垂直居中，子级未设置行高：normal</h1>
     
-    <div class="box"> 
+    <div class="box3"> 
         <p class="text2">为了更友好的用户体验，浏览器会尽可能快的展现内容，而不会等到文档所有内容到达才开始解析和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
     </div>
-</body>
-    <h1>图片水平垂直居中</h1>
-    
-    <div class="box2"> 
-            <img src="../img/bgImg.png" alt="">        
-    </div>
-</body>
+
+   
+    <h1>父级脱离文档流的line-height表现</h1>
+    <main>
+         <div class="container"> 
+            <span>为了更中友好的用户体布局渲x</span>
+            <!-- <i>x</i> -->
+        </div>
+       <span class="hello">你好x</span>
+    </main>
+
 </html>
