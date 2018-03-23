@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: gray;
+          font-size:0;
+        }
+        h1{
+            text-align: center;
+        }
+      
+
+        .b{
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        .box{
+            background-color: gainsboro;
+            line-height: 500px;
+          
+        }
+        .text{
+            margin: 0;
+            font-size: 30px;
+            background-color: green;
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .text2{
+            margin: 0;
+            font-size: 30px;
+            background-color: green;
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            /* line-height: normal; */
+        }
+        .box2{
+            line-height: 500px;
+            text-align: center;
+            background-color: gray;
+        }
+        .box2 img{
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片会留白</h1>
+    <div>
+        <img src="../img/bgImg.png" alt="">x
+    </div>
+    <h1>多行文字垂直居中</h1>
+    <div class="box"> 
+        <p class="text">为了更友好的用户体验，浏览器会尽可能快的展现内容，而不会等到文档所有内容到达才开始解析和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
+    </div>
+    <h1>多行文字垂直居中，子级未设置行高：normal</h1>
+    
+    <div class="box"> 
+        <p class="text2">为了更友好的用户体验，浏览器会尽可能快的展现内容，而不会等到文档所有内容到达才开始解析和构建/布局渲染树，而是每次处理一部分，并展现在屏幕上，这也是为什么我们经常可以看到页面加载的时候内容是从上到下一点一点展现的。</p>
+    </div>
+</body>
+    <h1>图片水平垂直居中</h1>
+    
+    <div class="box2"> 
+            <img src="../img/bgImg.png" alt="">        
+    </div>
+</body>
+</html>

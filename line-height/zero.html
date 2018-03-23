@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .mt200{
+            margin-top:200px;
+        }
+        .lh50{
+            line-height: 50px;  
+        }
+        .lh100{
+             line-height: 100px;
+        }
+        .lhp150{
+             line-height: 150%;
+        }
+        .lh1p5{
+             line-height: 1.5;
+        }
+        .lhe15{
+             line-height: 1.5em;
+        }
+        .lh1485{
+            line-height: 1.42857;
+        }
+        .lh20{
+             line-height: 20px;
+        }
+        .lh150{
+            line-height: 150px;
+        }
+        .lh200{
+            line-height: 200px;
+        }
+        .h100{
+            height: 100px;
+        }
+        .ib{
+            display: inline-block;
+        }
+        .fl{
+            float: left;
+        }
+        .h200{
+            height: 200px;
+        }
+        .red{
+            background-color: red;
+             
+        }
+        .gray{
+            background-color: gray;
+        }
+        .green{
+            background-color: forestgreen;
+           
+        }
+        .yellow{
+            background-color: yellow;
+            
+        }   
+        .d8{
+            background-color: #d8d8d8;
+        }
+        .text-ff{
+            color: #ffffff;
+        }
+    .hid{
+        overflow: hidden;
+    }
+    .simsun{
+        font-family: "SimSun";
+    }
+    .fz20{
+        font-size: 20px;
+    }
+    .fz30{
+        font-size: 30px;
+    }
+    .fz15{
+        font-size: 150x;
+    }
+    .fz50{
+        font-size: 50px;
+    }
+    .fz14{
+        font-size: 14px;
+    }
+    .dlb{
+        display: inline-block;
+    }
+    .center{
+        text-align: center;
+    }
+    .abso{
+        position: absolute;
+    }
+    .container img{
+        vertical-align: middle;
+    }
+    </style>
+</head>
+<body>
+    <h1>单行文本的line-height</h1>
+    <div class="d8">
+        <span class="gray text-ff">程序员,默认行高</span>
+        <span class="red lh50 text-ff">程序员，50行高</span>
+        <span class="green lh100 text-ff"程序员>，100行高</span>
+        <span class="yellow lh150 text-ff">程序员，150行高</span>
+    </div>
+    <h1>div的行高设为150px</h1>
+    <div class="lh150 d8">
+            <span class="gray text-ff">程序员,默认行高</span>
+            <span class="red text-ff">程序员，50行高</span>
+            <span class="green text-ff"程序员>，100行高</span>
+            <span class="yellow text-ff">程序员，150行高</span>
+        </div>  
+     <h1>不设置行高</h1>
+        <div class="d8">
+                <span class="green text-ff">程序员0行高</span>
+              
+                
+        </div>
+     <h1>父级不设置行高，子集设置高度与行高</h1>
+        <div class="d8">
+                <span class="green text-ff ib h200">程序员，0行高，200高</span>
+                <span class="red text-ff lh150 ib h100">程序员，50行高,100高</span>
+                
+        </div>
+        <h1>div行高150，子集行高200 </h1>
+        <div class="lh150 d8 ">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff">程序员，50行高</span>
+                <span class="green text-ff"程序员>，100行高</span>
+                <span class="yellow text-ff lh200">程序员，150行高</span>
+        </div> 
+        <h1>line-height:150px与height:200px </h1>
+        <div class="lh150 d8 h200">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff">程序员，50行高</span>
+                <span class="green text-ff"程序员>，100行高</span>
+                <span class="yellow text-ff">程序员，150行高</span>
+        </div> 
+        <h1>line-height:150px与height:100px </h1>
+        <div class="lh150 d8 h100">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff">程序员，50行高</span>
+                <span class="green text-ff"程序员>，100行高</span>
+                <span class="yellow text-ff">程序员，150行高</span>
+        </div> 
+        <h1>脱离文档流的div高度</h1>
+        <div class="d8">
+            <span class="fl gray text-ff">程序员,默认行高</span>
+            <span class="fl red lh50 text-ff">程序员，50行高</span>
+            <span class="fl green lh100 text-ff"程序员>，100行高</span>
+            <span class="fl yellow lh150 text-ff">程序员，150行高</span>
+        </div>
+        <h1 class="mt200">宋体和负行间距</h1>        
+        <div class="d8 ">
+            
+                <span class="simsun red lh20 text-ff fz50">程序员，20行高,30字体</span>
+             
+        </div>
+        <h1>line-height:1.5,、150%、1.5em的区别 </h1>
+        <div class="lh1p5 d8 simsun">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff fz20">程序员，20fong-size</span>
+                <span class="green text-ff fz30"程序员>，30fong-size</span>
+                <span class="yellow text-ff fz50">程序员，50fong-size</span>
+        </div> 
+        <hr>
+        <div class="lhe15 d8 simsun">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff fz20">程序员，20fong-size</span>
+                <span class="green text-ff fz30"程序员>，30fong-size</span>
+                <span class="yellow text-ff fz50">程序员，50fong-size</span>
+        </div> 
+        <hr>
+        <div class="lhp150 d8 simsun">
+                <span class="gray text-ff">程序员,默认行高</span>
+                <span class="red text-ff fz20">程序员，20fong-size</span>
+                <span class="green text-ff fz30"程序员>，30fong-size</span>
+                <span class="yellow text-ff fz50">程序员，50fong-size</span>
+        </div> 
+        <h1>line-height:1.4285line-height是否为20px </h1>
+        <div class="lh1485 d8  fz14">
+                <span class="gray text-ff">程序员,默认行高</span>
+        </div>
+        <h1>与图片的表现 </h1>
+        <div class="lh50 d8 ">
+                <img src="../img/bgImg.png" alt="">
+                <span class="gray text-ff dlb">程序员,默认行高</span>
+        </div>
+        <h1>与图片的表现 </h1>
+        <div class=" d8 container">
+                <img src="../img/bgImg.png" alt="">
+                <span class="gray text-ff">x程序员,默认行高</span>
+        </div>
+        <h1>隐匿文本节点 </h1>
+        <div class="lh50 d8 center">
+                <img src="../img/bgImg.png" class="abso" alt="">
+              
+        </div>
+</body>
+</html>
