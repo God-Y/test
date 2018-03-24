@@ -5,19 +5,29 @@
 	<title>Document</title>
 </head>
 <style>
-	.fa {
-		display: flex;
-		flex-wrap:wrap;
-	}
-	.fa div{
-		/* width:30%; */
-		padding: 15%;
-		margin:1.66%;
-		box-sizing: border-box;
-		flex: none;
-		background-color: goldenrod;
-		border-radius: 15%;
-	}
+	.sidebar {
+    /* formatting model: positioning schemes / offsets / z-indexes / display / ...  */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    overflow-x: hidden;
+
+    /* box model: sizes / margins / paddings / borders / ...  */
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ddd;
+
+    /* typographic: font / aligns / text styles / ... */
+    font-size: 14px;
+    line-height: 20px;
+
+    /* visual: colors / shadows / gradients / ... */
+    background: #f5f5f5;
+    color: #333;
+    -webkit-transition: color 1s;
+       -moz-transition: color 1s;
+            transition: color 1s;
+}
 </style>
 <body>
         <figure>

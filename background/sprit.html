@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>雪碧图与position</title>
+    <style>
+        .container {
+            height: 400px;
+            border: 1px solid #d8980d;
+            /* margin-left: 30px; */
+            background-image: url(../img/bgImg.png);
+            background-repeat: no-repeat;
+        
+        }
+        .container2 {
+            height: 400px;
+            border: 1px solid #d8980d;
+            /* margin-left: 30px; */
+            background-image: url(../img/bgImg.png);
+            background-repeat: no-repeat;
+            background-position: 30px 30px;
+        }
+        p {
+            display: inline-block;
+            color:#fff;
+            background: blue;
+        }
+        .container3 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #d8980d;
+        }
+        .container3 div {
+            margin-top: 30px;
+            margin-left: 50px;
+            border:1px solid red;
+            /* display: inline-block; */
+            /* background: blue; */
+        }
+        .box1 {
+            width: 19px; height: 33px;
+            background: url("../img/sprites.png") -10px -10px;
+        }
+        .box2 {
+            width: 24px; height: 24px;
+            background: url("../img/sprites.png") -49px -10px;
+        }
+        .box3{
+            width: 19px; height: 23px;
+            background: url("../img/sprites.png") -93px -10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>background-position:0 0;即为默认值的时候表现</h1>
+    <div class="container"></div>
+    <p>结论：在不铺平的前提下，背景图片的左上角与容器左上角重合。</p>
+    <h1>background-position:30px 30px;</h1>
+    <div class="container2"></div>
+    <p>结论：在不铺平的前提下，背景图片往右往下各移动了30px。</p>
+    <h1>雪碧图实现</h1>
+    <div class="container3">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <p>结论：在不铺平的前提下，背景图片的background-position为负值。</p>
+
+</body>
+</html>
