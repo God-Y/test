@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 初始化 */
+        html,body {
+            height: 100%;
+        }
+        body{
+            margin: 0;
+        }
+        /*body减级，page升级*/
+        .page {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        /* header/footer/left-nav固定布局 */
+        header,footer {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height:100px;
+        }
+        header {
+            top:0;
+            background: red;
+        }
+        footer {
+            bottom:0;
+            background: paleturquoise;
+        }
+        .left-nav {
+            position: absolute;
+            top:100px;
+            bottom: 100px;
+            left: 0;
+            width: 200px;
+            background-color: palevioletred;
+        }
+        main { 
+            position: absolute;
+            left: 200px;
+            right: 0;
+            top: 100px;
+            bottom: 100px;
+            background: purple;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header></header>
+        <div class="left-nav"></div>
+        <main>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+            <p>这是内容</p>
+        </main>
+        <footer></footer> 
+    </div>
+</body>
+</html>
