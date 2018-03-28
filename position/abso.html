@@ -38,8 +38,17 @@
             bottom: 0;
             background: cadetblue;
         }
-        /* 绝对定位的拉伸性 + 子级有尺寸 + 子级margin:auto */
+        /*子级left:0,top:0 + 子级有尺寸 */
         .son3 {
+            position: absolute;
+            left: 0;
+    
+            top: 0;
+         
+            background: cadetblue;
+        }
+        /* 绝对定位的拉伸性 + 子级有尺寸 + 子级margin:auto */
+        .son4 {
             position: absolute;
             left: 0;
             right: 0;
@@ -63,11 +72,11 @@
     <p>结论：子级设置绝对定位后设置四个方向为0+自身有尺寸，此时子级会在父级容器左上角，与left：0；top:0;表现一致。</p>
     <h1>子级left:0,top:0 + 子级有尺寸</h1>
     <div class="box">
-        <img class="son2" src="../img/bgImg.png" alt="" />
+        <img class="son3" src="../img/bgImg.png" alt="" />
     </div>
     <h1>绝对定位的拉伸性 + 子级有尺寸 + 子级margin:auto</h1>
     <div class="box">
-        <img class="son3" src="../img/bgImg.png" alt="" />
+        <img class="son4" src="../img/bgImg.png" alt="" />
     </div>
     <p>结论：子级水平垂直居中。</p>
 </body>
