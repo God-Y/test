@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>蚂蚁部落</title>
+    <style>
+        .container1{
+            float: left;
+        }
+        .container2{
+            float: right;
+        }
+        h1{
+            text-align: center;
+        }
+        .rela{
+            position: relative;
+            
+            width: 600px;
+            height: 400px;
+            background: paleturquoise;
+        }
+        .trans{
+            margin: 50px;
+            width: 400px;
+            height: 200px;
+            background: orchid;
+            transform: scale(1);
+        }
+        .abso{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+        .box{
+            width: 600px;
+            background: cadetblue;
+            height: 1000px;
+        }
+        .fixed{
+            position: fixed;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <h1>transform对absolute的影响</h1>
+        <div class="rela">
+            <div class="trans">
+                <div class="abso"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <h1>transform对fixed的影响</h1>
+        <div class="box">
+                <div class="trans">
+                    <div class="fixed"></div>
+                </div>
+                <div class="fixed"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
