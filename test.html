@@ -1,73 +1,50 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="author" content="http://www.softwhy.com/" />
-<title>蚂蚁部落</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-        .container1{
-            float: left;
-        }
-        .container2{
-            float: right;
-        }
-        h1{
-            text-align: center;
-        }
-        .rela{
-            position: relative;
-            
-            width: 600px;
-            height: 400px;
-            background: paleturquoise;
-        }
-        .trans{
-            margin: 50px;
+        div {
             width: 400px;
-            height: 200px;
-            background: orchid;
-            transform: scale(1);
+         
+            background: aqua;
+            margin: 50px auto;
         }
-        .abso{
-            position: absolute;
-            top:0;
-            left:0;
-            width: 100px;
-            height: 100px;
-            background: black;
+        p:nth-child(2) {
+            word-break: break-all;
         }
-        .box{
-            width: 600px;
-            background: cadetblue;
-            height: 1000px;
+        p:nth-child(3) {
+            word-break: keep-all;
         }
-        .fixed{
-            position: fixed;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: black;
+        p:nth-child(4) {
+            word-wrap: break-word;
+        }
+      .two  p:nth-child(2) {
+            word-break: break-all;
+        }
+       .two p:nth-child(3) {
+            word-break: keep-all;
+        }
+       .two p:nth-child(4) {
+            word-wrap: break-word;
         }
     </style>
 </head>
 <body>
-    <div class="container1">
-        <h1>transform对absolute的影响</h1>
-        <div class="rela">
-            <div class="trans">
-                <div class="abso"></div>
-            </div>
-        </div>
+    <div>
+        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
+        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
+        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
+        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
+    </div> 
+    <div class="two">
+            <p>商授权商业转商授 权商业转商授权商业转商授权商业商 授权商业转 商授权 商业转转商授权商业转</p> 
+            <p>商授权商业转商授权商业转商授权商业转商授 权商业商授权商业 转商授权 商业转转商授权商业转</p> 
+            <p>商授权商业转商授 权商业转商授权商业转商授权商业商授权商 业转商授权 商业转转商授权商业转</p> 
+            <p>商授权商业转商授权 商业转商授权商业转商授权商业商授权 商业转商授权 商业转转商授权商业转</p> 
+        
     </div>
-    <div class="container2">
-        <h1>transform对fixed的影响</h1>
-        <div class="box">
-                <div class="trans">
-                    <div class="fixed"></div>
-                </div>
-                <div class="fixed"></div>
-        </div>
-    </div>
-    
 </body>
 </html>

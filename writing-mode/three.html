@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <title>Document</title>
+    <style>
+        body {
+            position: relative;
+        }
+        header,footer {
+            height: 200px;
+            font-size: 40px;
+            color: yellow;
+            background: gainsboro;
+        }
+        main {
+            width: 100%;
+            height: 2000px;
+            font-size: 40px;
+            color: #fff;
+            background: red;
+        }
+        .fa {
+            position: absolute;
+            top:0;
+            right:0;
+            width: 200px;
+            height: 100%;
+
+            background: blue;
+            /* 设置父级背景为transparent */
+            /* background: transparent; */
+            text-align: center;
+        }
+        /* 实现粘性定位的关键代码,始终距离屏幕顶端450px */
+        .son {
+            position: sticky;
+            
+            top:500px;
+            
+        }
+        /* 花里胡哨的样式，不必在意 */
+        .son {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: yellow;
+             line-height: 100px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 40px;
+            writing-mode: vertical-lr;
+            color: #d8d8d8;
+            box-shadow:  inset 0 0 0 2px #999,0 1px,0 2px,0 3px,0 4px;
+            border-radius: 50%;
+        }
+        .son:active {
+            text-indent: 4px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>头部</header>
+     <main>
+        这是中间布局
+     </main>
+     <footer>尾部</footer>
+     <div class="fa">
+            <a class="son" href="#">顶</a>
+         </div>
+    </body>
+</html>
