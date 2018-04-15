@@ -1,50 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div {
+        .one{
+            width: 800px;
+            height: 800px;
+            background: violet;
+        }
+        .two {
+            width: 600px;
+            height: 600px;
+            background: gray;
+        }
+        .three {
             width: 400px;
-         
-            background: aqua;
-            margin: 50px auto;
+            height: 400px;
+            background-color: red;
         }
-        p:nth-child(2) {
-            word-break: break-all;
+        .four {
+            width: 100%;
+            height: 100%;
+            background: #000;
         }
-        p:nth-child(3) {
-            word-break: keep-all;
-        }
-        p:nth-child(4) {
-            word-wrap: break-word;
-        }
-      .two  p:nth-child(2) {
-            word-break: break-all;
-        }
-       .two p:nth-child(3) {
-            word-break: keep-all;
-        }
-       .two p:nth-child(4) {
-            word-wrap: break-word;
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: green;
         }
     </style>
 </head>
+
 <body>
-    <div>
-        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
-        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
-        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
-        <p>kdhkajlkadjhliasjhnflkjjsanklajhflkadhnalskjaljkdsjhnaksjdfials</p>    
-    </div> 
-    <div class="two">
-            <p>商授权商业转商授 权商业转商授权商业转商授权商业商 授权商业转 商授权 商业转转商授权商业转</p> 
-            <p>商授权商业转商授权商业转商授权商业转商授 权商业商授权商业 转商授权 商业转转商授权商业转</p> 
-            <p>商授权商业转商授 权商业转商授权商业转商授权商业商授权商 业转商授权 商业转转商授权商业转</p> 
-            <p>商授权商业转商授权 商业转商授权商业转商授权商业商授权 商业转商授权 商业转转商授权商业转</p> 
-        
+    <div class="one">
+        <div class="two">
+            <div class="three" id="a">
+                <div class="four"></div>
+                <span >33</span>
+            </div>
+        </div>
     </div>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var log=console.log;
+    $('body').on('click',function(e){
+       log('body');
+    });
+    $('span').on('click',function(e){
+       log('span');
+       e.stopPropagation();
+       log('你是sb');
+    });
+    $('.one').on('click',function(e){
+       log('.one');
+    });
+    $('.two').on('click',function(e){
+       log('.two');
+    });
+
+    // $('.three').on('click',function(e){
+    //    log('.three1');
+    //     e.stopPropagation();
+    // });
+    var a=document.getElementById('a');
+    a.addEventListener('click',function(e){
+       log('.three');        
+       e.stopPropagation();
+       log('你是sb');
+       
+    },true);
+    $('.four').on('click',function(e){
+       
+       log('.four');
+    });
+</script>
 </html>
