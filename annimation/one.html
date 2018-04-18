@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        .zzsc-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* z-index: -1; */
+        }
+
+        canvas {
+            width: 180px;
+            height: 780px;
+        }
+
+        .box {
+            position: absolute;
+            display: inline-flex;
+            margin-top: 50PX;
+            width: .6rem;
+        }
+
+        a {
+            position: absolute;
+            text-decoration: none;
+            color: #fff;
+            z-index: 1;
+        }
+
+        a:hover {
+            color: blue;
+        }
+        .two {
+            left:180px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="zzsc-container">
+        <div class="zzsc-content">
+            <div id="holder">
+                <div class="box">
+                    <a href="#">你好</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zzsc-container two">
+        <div class="zzsc-content">
+            <div id="holder2">
+                <div class="box">
+                    <a href="#">你好</a>    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="one.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //------------------------------------------------------------------------
+
+            //Settings - params for WarpDrive
+            var settings = {
+                autoResize: false,
+                autoResizeMinWidth: null,
+                autoResizeMaxWidth: null,
+                autoResizeMinHeight: null,
+                autoResizeMaxHeight: null,
+                addMouseControls: true,
+                addTouchControls: true,
+                hideContextMenu: true,
+                starCount: 6666,
+                starBgCount: 2222,
+                starBgColor: {
+                    r: 255,
+                    g: 255,
+                    b: 255
+                },
+                starBgColorRangeMin: 10,
+                starBgColorRangeMax: 40,
+                starColor: {
+                    r: 255,
+                    g: 255,
+                    b: 255
+                },
+                starColorRangeMin: 10,
+                starColorRangeMax: 100,
+                starfieldBackgroundColor: {
+                    r: 0,
+                    g: 0,
+                    b: 0
+                },
+                starDirection: 1,
+                starSpeed: 20,
+                starSpeedMax: 200,
+                starSpeedAnimationDuration: 2,
+                starFov: 300,
+                starFovMin: 200,
+                starFovAnimationDuration: 2,
+                starRotationPermission: true,
+                starRotationDirection: 1,
+                starRotationSpeed: 0.0,
+                starRotationSpeedMax: 1.0,
+                starRotationAnimationDuration: 2,
+                starWarpLineLength: 2.0,
+                starWarpTunnelDiameter: 100,
+                starFollowMouseSensitivity: 0.025,
+                starFollowMouseXAxis: true,
+                starFollowMouseYAxis: true
+
+            };
+
+            //------------------------------------------------------------------------
+
+            //standalone
+
+            //init
+
+            var warpdrive = new WarpDrive(document.getElementById('holder'));
+            //var warpdrive = new WarpDrive( document.getElementById( 'holder' ), settings );
+
+            //------------------------------------------------------------------------
+
+            //jQuery
+
+            //init
+
+            //$( '#holder' ).warpDrive();
+            //$( '#holder' ).warpDrive( settings );
+
+            //------------------------------------------------------------------------
+
+        });
+        $(document).ready(function () {
+
+//------------------------------------------------------------------------
+
+//Settings - params for WarpDrive
+var settings = {
+
+
+    autoResize: false,
+    autoResizeMinWidth: null,
+    autoResizeMaxWidth: null,
+    autoResizeMinHeight: null,
+    autoResizeMaxHeight: null,
+    addMouseControls: true,
+    addTouchControls: true,
+    hideContextMenu: true,
+    starCount: 6666,
+    starBgCount: 2222,
+    starBgColor: {
+        r: 255,
+        g: 255,
+        b: 255
+    },
+    starBgColorRangeMin: 10,
+    starBgColorRangeMax: 40,
+    starColor: {
+        r: 255,
+        g: 255,
+        b: 255
+    },
+    starColorRangeMin: 10,
+    starColorRangeMax: 100,
+    starfieldBackgroundColor: {
+        r: 0,
+        g: 0,
+        b: 0
+    },
+    starDirection: 1,
+    starSpeed: 20,
+    starSpeedMax: 200,
+    starSpeedAnimationDuration: 2,
+    starFov: 300,
+    starFovMin: 200,
+    starFovAnimationDuration: 2,
+    starRotationPermission: true,
+    starRotationDirection: 1,
+    starRotationSpeed: 0.0,
+    starRotationSpeedMax: 1.0,
+    starRotationAnimationDuration: 2,
+    starWarpLineLength: 2.0,
+    starWarpTunnelDiameter: 100,
+    starFollowMouseSensitivity: 0.025,
+    starFollowMouseXAxis: true,
+    starFollowMouseYAxis: true
+
+};
+
+//------------------------------------------------------------------------
+
+//standalone
+
+//init
+
+var warpdrive = new WarpDrive(document.getElementById('holder2'));
+//var warpdrive = new WarpDrive( document.getElementById( 'holder' ), settings );
+
+//------------------------------------------------------------------------
+
+//jQuery
+
+//init
+
+//$( '#holder' ).warpDrive();
+//$( '#holder' ).warpDrive( settings );
+
+//------------------------------------------------------------------------
+
+});
+    </script>
+</body>
+
+</html>

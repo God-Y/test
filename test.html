@@ -1,83 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
     <style>
-        .one{
-            width: 800px;
-            height: 800px;
-            background: violet;
+        body {
+            margin:0;
         }
-        .two {
-            width: 600px;
-            height: 600px;
+        .box {
+            display: flex;
+            float: left;
+            flex-wrap: wrap;
+        }
+        .son {
+            float: left;
+            flex-basis: 33%;
+            flex-shrink: 0;
+           
+            height: 300px;
             background: gray;
+            margin: 2px;
         }
-        .three {
-            width: 400px;
-            height: 400px;
-            background-color: red;
-        }
-        .four {
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-        span{
+        span {
             display: inline-block;
-            width: 100px;
+            width: 800px;
             height: 100px;
-            background: green;
+            background: red;
         }
     </style>
 </head>
+<div class="box">
+    <div class="son">
+        <!-- <span></span> -->
+    </div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+</div>
 
 <body>
-    <div class="one">
-        <div class="two">
-            <div class="three" id="a">
-                <div class="four"></div>
-                <span >33</span>
-            </div>
-        </div>
-    </div>
-</body>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    var log=console.log;
-    $('body').on('click',function(e){
-       log('body');
-    });
-    $('span').on('click',function(e){
-       log('span');
-       e.stopPropagation();
-       log('你是sb');
-    });
-    $('.one').on('click',function(e){
-       log('.one');
-    });
-    $('.two').on('click',function(e){
-       log('.two');
-    });
+    <script>
+        var log=console.log;
+        var num=1;
+        var num2=3;
+        var obj={
+            a:2,
+            b:3
+        };
+        var a;
+        var b=null;
+        log(`${a}`);
+        log(`${b}`);
 
-    // $('.three').on('click',function(e){
-    //    log('.three1');
-    //     e.stopPropagation();
-    // });
-    var a=document.getElementById('a');
-    a.addEventListener('click',function(e){
-       log('.three');        
-       e.stopPropagation();
-       log('你是sb');
-       
-    },true);
-    $('.four').on('click',function(e){
-       
-       log('.four');
-    });
-</script>
-</html>
+
+
+
+
+
+
+       log(`\`我能看到反斜杠了`);
+    </script>
+</body>
+
+</html>                    
