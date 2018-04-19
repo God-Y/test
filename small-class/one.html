@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            padding: 1px;
+
+            /* height: 100px; */
+            background: #000;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 5px;
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        main {
+            display: flex;
+        }
+
+        main aside {
+            flex-shrink: 0;
+            background: #d8d8d8;
+        }
+
+        main article {
+            padding-left: 5px;
+        }
+
+        footer {
+            height: 200px;
+        }
+        footer address ul li {
+            float: left;
+            list-style: none;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>header区域</h1>
+        <nav>
+            <a href="">导航一</a>
+            <a href="">导航二</a>
+            <a href="">导航三</a>
+            <a href="">导航四</a>
+            <a href="">导航五</a>
+        </nav>
+    </header>
+    <h1>main区域</h1>
+    <main>
+
+
+        <aside>
+            <h3>修真院职业</h3>
+            <ul>
+                <li>java开发</li>
+                <li>web开发</li>
+                <li>PM</li>
+                <li>UI</li>
+            </ul>
+        </aside>
+        <article>
+            <header>
+                <h1>标题</h1>
+                <p>发表日期：
+                    <time pubdate="pubdate">2018年4月19号</time>
+                </p>
+
+            </header>
+            <p>
+                article元素是可以嵌套的，内层的内容原则上需要与外层的内容相关联。例如，一篇博客文章中，针对该文章的评论就可以使用嵌套article元素的方式，用来呈现评论的article元素被包含在表示整体内容的article元素里面。
+            </p>
+            <section>
+                <h2>评论</h2>
+                <article>
+                    <header>
+                        <h3>张三的评论</h3>
+                        <p>12分钟前</p>
+                    </header>
+                    <p></p>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <header>
+                        <h3>李四的评论</h3>
+                        <p>15分钟前</p>
+                    </header>
+                </article>
+            </section>
+        </article>
+
+    </main>
+
+    <footer>
+        <h1>footer区域</h1>
+        
+        <address>
+                <small>作者：上海分院杨亚洲</small>
+            <ul>
+                <li>网址：
+                    <a rel="nofollow" href="http://www.169it.com<" target="_blank">http://www.jnshu.com
+                    </a>
+                </li>
+                <li>QQ：110</li>
+                <li>邮件：110@zhongguo.com</li>
+            </ul>
+        </address>
+    </footer>
+</body>
+
+</html>
