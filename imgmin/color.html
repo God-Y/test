@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var log = console.log;
+        var bg1 = function () {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
+        log(bg1());
+        //h-hue 色度 s-saturation饱和度 l-lightness亮度 
+        var bg2 = function () {
+            var h = Math.floor(Math.random() * 361);
+            var s = Math.floor(Math.random() * 101);
+            var l = Math.floor(Math.random() * 101);
+            return `hsl(${h},${s}%,${l}%)`;
+        }
+        //从16进制字符串随机选值
+        var bg3 = function () {
+            var colors = '0123456789abcdef';
+            var color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += colors[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var bg4 = function () {
+            var color = '#';
+            var num = 0xffffff + 1;
+            color += Math.floor(Math.random() * num).toString(16);
+            return color;
+        }
+        var bg5 = function () {
+            return '#' + (function (color) {
+                return (color += '0123456789abcdef' [Math.floor(Math.random() * 16)]) && (color.length == 6) ?
+                    color : arguments.callee(color);
+            })('');
+        };
+        var bg6 = function () {
+            return (function (math, colors, num) {
+                return (num ? arguments.callee(math, colors, --num) : '#') + 
+                colors[math.floor(math.random() *16)];
+            })(Math, '0123456789abcdef', 5);
+        };
+        log(bg6());
+    
+        var body = document.getElementsByTagName('body');
+        body[0].style.background = bg6();
+    </script>
+</body>
+
+</html>

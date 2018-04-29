@@ -76,6 +76,27 @@ function bg(){
     return (function(math,color,num){
         return (num?arguments.callee(math,color,--num):'#')
         + color[math.floor(math.random()*16)];
-    })(Math,'0123456789abcdef',6)
+    })(Math,'0123456789abcdef',5)
 }
 log(bg());
+
+   //写一个能传参的函数，num是获取几个随机数，
+        //arr用来获取数组长度，用于取随机数
+        function randomDiv(num, arr) {
+            var length = arr.length, //获得数组长度,
+                alone=arr.slice(0),//复制原数组，防止影响原来的数组。
+                newArr = [], //新建数组，用于放置随机项
+                temp;    //防止随机项
+            while (num-- > 0) {
+                var random =Math.floor(Math.random()*(length--));
+                //取得是数组
+                temp =alone.splice(random,1);
+                //使用扩展运算符...
+                // newArr.push(...temp);
+                //不使用...的话，使用concat方法，但是这个方法不会影响原数组
+                newArr=newArr.concat(temp);
+            }
+            //裁剪数组
+            return newArr;
+        }
+
