@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section{
+            padding: 10px;
+            background: #d8d8d8;
+        }
+        div{
+            color: red;
+            background: palegoldenrod;
+            border: solid;
+            background-clip: content-box;
+            
+            height: 200px;
+            width: 200px;
+        }
+        .on{
+            writing-mode: vertical-lr;
+        }
+        .cc{
+            position: relative;
+            width: 1000px;
+            height: 500px;
+        }
+        .cc div{
+            margin: 5%;
+            padding: 5%;
+        }
+        #lk {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 100px;
+            height: 60px;
+            background: green;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>writing-mode的表现</h1>
+    <section>
+            <h4>给下面的盒子设置writing-mode:vertical-lf;</h4>
+            <div id="a">
+                文字的走向
+            </div>
+    </section>
+    <button id="o1">设置writing-mode:vertical-lf;</button>
+    <script>
+        var btn=document.getElementById('o1');
+        var a=document.getElementById('a');
+        btn.onclick=function(){
+            a.classList.toggle('on')
+        }
+    </script>
+    <hr>
+    <section class="cc">
+            <h4>父级宽度1000px;高度500px</h4>
+            <div id="a">
+                文字的走向
+            </div>
+            <button id="lk">点击按钮</button>
+    </section>
+    <script>
+       var btn1=document.getElementById('lk');
+        var cc=document.querySelector('.cc');
+        btn1.onclick=function(){
+            cc.classList.toggle('on');
+        }
+    </script>
+</body>
+</html>

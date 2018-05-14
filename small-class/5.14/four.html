@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .one{
+            background: #d8d8d8;
+            overflow: hidden;
+        }
+        .one p{
+            background: blue;
+        }
+        button{
+            margin: 20px;
+        }
+        .e{
+            margin-top: 10px;
+            background: red;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <h1>相邻兄弟之间的margin重叠</h1>
+        <p class="a">第一行段落</p>
+        <p class="b">第二行段落</p>
+        <form action="">
+            <input type="text" class="text" class="in1" id="in1">第一行段落margin值
+            <input type="text" class="text" class="in2" id="in2"> 第二行段落margin值
+            <br>
+            <button type="button" class="btn1" id="btn1">确定</button>
+        </form>
+    </div>
+    <hr />
+    <script>
+        var btn1=document.getElementById('btn1');
+        var in1 =document.getElementById('in1');
+        var in2 =document.getElementById('in2');
+        var a =document.querySelector('.a');
+        var b =document.querySelector('.b');
+        btn1.onclick=function(){
+            console.log(in2);
+            console.log(in2.value);
+
+            var am=in1.value;
+            var bm=in2.value;
+            a.style.marginBottom=am;
+            b.style.marginTop=bm;
+        }
+    </script>
+        <h1>父级和第一个子级之间的margin-top重叠</h1>
+    <div class="one">
+        <section class="c">
+             <p class="d">第一个子级段落</p>
+        </section>
+       
+        <form action="">
+            <input type="text" class="text" class="in1" id="in3">父级的margin值
+            <input type="text" class="text" class="in2" id="in4"> 第一个子级margin值
+            <br>
+            <button type="button" class="btn1" id="btn2">确定</button>
+        </form>
+    </div>
+    <script>
+        var btn2=document.getElementById('btn2');
+        var in3 =document.getElementById('in3');
+        var in4 =document.getElementById('in4');
+        var c =document.querySelector('.c');
+        var d =document.querySelector('.d');
+        btn2.onclick=function(){
+
+            var am1=in3.value;
+            var bm1=in4.value;
+            c.style.marginTop=am1;
+            d.style.marginTop=bm1;
+        }
+    </script>
+        <h1>父级和最后一个子级之间的margin-bottom重叠规格和上面差不多不讲了</h1>
+    
+        <h1>空标签margin-top和margin-bottom的重叠</h1>
+    <div class="one">
+        <section class="e">
+             <p class="f"></p>
+        </section>
+       
+        <form action="">
+            <input type="text" class="text" class="in1" id="in5">空白标签的margin-top值
+            <input type="text" class="text" class="in2" id="in6"> 空白标签的margin-botom值
+            <br>
+            <button type="button" class="btn1" id="btn3">确定</button>
+        </form>
+    </div>
+    <script>
+        var btn3=document.getElementById('btn3');
+        var in5 =document.getElementById('in5');
+        var in6 =document.getElementById('in6');
+        var e =document.querySelector('.e');
+        var f =document.querySelector('.f');
+        btn3.onclick=function(){
+
+            var am2=in5.value;
+            var bm2=in6.value;
+            f.style.marginTop=am2;
+            f.style.marginBottom=bm2;
+        }
+    </script>
+</body>
+</html>

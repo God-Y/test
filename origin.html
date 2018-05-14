@@ -1,37 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="">
     <style>
-        div{
-            width: 800px;
-            height: 400px;
-            padding: 50px;
-            border: 20px dotted;
-        
-            background-image: url(img/bgImg.png);
-            background-repeat: no-repeat;
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
         }
-        .border{
-            background-origin: border-box;
+
+        .carousel {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            overflow: hidden;
         }
-        .padding{
-            background-origin: padding-box;
+
+        .img-container {
+            position: absolute;
+            left: 0;
+            width: 600%;
+            height: 500px;
+            padding-left: 0;
+            list-style: none;
+            /* transition: all 200ms; */
         }
-        .content{
-            background-origin: content-box;
+
+        .img-container li {
+
+            width: 1000px;
+            height: 500px;
+            float: left;
+        }
+
+        .img-container li:first-child {
+            background: red;
+        }
+
+        .img-container li:nth-child(2) {
+            background: green;
+        }
+
+        .img-container li:nth-child(3) {
+            background: gray;
+        }
+
+        .img-container li:nth-child(4) {
+            background: yellow;
+        }
+
+        .img-container li:nth-child(5) {
+            background: blue;
+        }
+
+        .img-container li:nth-child(6) {
+            background: lawngreen;
+        }
+
+        .point-buttons {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 50px
+            /* margin-top: -50px; */
+        }
+
+        .point-buttons span {
+            display: inline-block;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background: palegreen;
+
+        }
+
+        .point-buttons .on {
+            background: orange;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 10%;
+            top: 0;
+            bottom: 0;
+
+
+        }
+
+        .last-ctrl {
+            left: 0;
+        }
+
+        .last-ctrl:hover {
+
+            background-image: linear-gradient(to left, #fff, rgba(0, 0, 0, .5))
+        }
+
+        .next-ctrl {
+            right: 0;
+        }
+
+        .next-ctrl:hover {
+            background-image: linear-gradient(to right, #fff, rgba(0, 0, 0, .5))
+        }
+
+        .arrow::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border-left: 3px solid pink;
+            border-bottom: 3px solid pink;
+        }
+
+        .last-ctrl::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .next-ctrl::after {
+            transform: translate(-50%, -50%) rotate(-135deg);
         }
     </style>
 </head>
+
 <body>
-    <h3>background-origin:border-box</h3>
-    <div class="border"></div>
-    <h3>background-origin:padding-box</h3>
-    <div class="padding"></div>
-    <h3>background-origin:content-box</h3>
-    <div class="content"></div>
+    <div class="carousel" id="carousel">
+        <ul class="clearfix img-container" id="imgList">
+            <li>4</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>1</li>
+        </ul>
+
+        <nav class="point-buttons" id="pointButtons">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+        </nav>
+        <a href="" class="last-ctrl arrow" id='prev'></a>
+        <a href="" class="next-ctrl arrow" id='next'></a>
+    </div>
+    <script>
+        var log=console.log;
+        window.onload = function () {
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var carouselList = document.getElementById('imgList');
+            var carousel = document.getElementById('carousel');
+          
+            function getStyle(ele, attr) {
+                if (ele.currentStyle) {
+                    return ele.currentStyle.getAttribute(attr)
+                } else {
+                    return window.getComputedStyle(ele, null).getPropertyValue(attr);
+                }
+            }
+
+            function move(offset) {
+                var leftVlaue = getStyle(carouselList, 'left');
+                var newLeft = parseInt(leftVlaue) + offset;
+                carouselList.style.left = newLeft + 'px';
+                if (newLeft < -4000) {
+                    carouselList.style.left = '-1000px';
+                } else if (newLeft > -1000) {
+                    carouselList.style.left = '-3000px';
+                }
+            }
+
+            var aurotimer;
+
+            function play() {
+                autotimer = setInterval(function () {
+                    next.onclick();
+                }, 1500)
+            }
+            play();
+            carousel.onmousemove = function () {
+                window.clearInterval(autotimer);
+            }
+            carousel.onmouseout = play;
+            var ctrlbtns = document.getElementById('pointButtons').getElementsByTagName('span');
+            let index = 1;
+
+            function buttonsShow() {
+                for (let i = 0; i < ctrlbtns.length; i++) {
+                    ctrlbtns[i].classList.remove('on');
+
+                }
+                ctrlbtns[index - 1].classList.add('on');
+            }
+            prev.onclick = function (e) {
+                index -= 1;
+                if (index < 1) {
+                    index = 4;
+                }
+                buttonsShow();
+                move(1000);
+                return false;
+            };
+            next.onclick = function (e) {
+                index += 1;
+                if (index > 4) {
+                    index = 1;
+                }
+                buttonsShow();
+                move(-1000);
+                return false;
+            };
+
+            // for (let i = 0; i < ctrlbtns.length; i++) {
+            //     ctrlbtns[i].onclick = function () {
+            //         // 在浏览器的控制台打印一下，看看结果
+            //         console.log(i);
+
+            //         /* 偏移量获取：这里获得鼠标移动到小圆点的位置，用this把index绑定到对象buttons[i]上，去谷歌this的用法  */
+            //         /* 由于这里的index是自定义属性，需要用到getAttribute()这个DOM2级方法，去获取自定义index的属性*/
+            //         var clickIndex = parseInt(this.getAttribute('index'));
+            //         var offset = 1000 * (index - clickIndex);
+            //         move(offset); //存放鼠标点击后的位置，用于小圆点的正常显示 
+            //         index = clickIndex;
+            //         buttonsShow();
+            //     }
+            // }
+            // for (let i = 0, len = ctrlbtns.length; i < len; i++) {
+            //         ctrlbtns[i].onclick = function () {
+            //             var dis = index - i;
+            //             if (index == 3 && parseInt(getStyle(carouselList, 'left')) !== -4000) {
+            //                 dis = dis - 4;
+            //             }
+            //             //和使用prev和next相同，在最开始的照片5和最终的照片1在使用时会出现问题，导致符号和位数的出错，做相应地处理即可
+            //             if (index == 0 && parseInt(getStyle(carouselList, 'left')) !== -1000) {
+            //                 dis = 4 + dis;
+            //             }
+            //             carouselList.style.left =(  (carouselList.style.left)+ dis * 1000) + "px";
+            //             index = i;
+            //             buttonsShow();
+                        
+            //         }
+               
+            // }
+
+        }
+    </script>
 </body>
+
 </html>

@@ -7,19 +7,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
+        p{
+            height: 300px;
+            background: #000;
+        }
         div{
             width: 300px;
             height: 300px;
             padding: 100px;
             background: salmon;
             background-clip: content-box;
-            border: solid #000;
+            border: solid pink;
             margin: 100px;
+        }
+        section {
+            background: rgba(0, 0, 0, .5);
+            overflow: hidden;
+        }
+        section i{
+            background: red;
+        }
+        small {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background: yellow;
         }
     </style>
 </head>
 
 <body>
+    <section>
+        <i>行内元素</i>
+        <hr>
+        <small>浮动远古三</small>
+    </section>
+    <p></p>
+    <h1>设置margin后块级元素的显示区域变小，触发事件的概率变小</h1>
    <div></div>
 <script>
     var div=document.querySelector('div');

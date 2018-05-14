@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        section {
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            margin-left: 250px;
+            background: #d8d8d8;
+            overflow: hidden;
+        }   
+        form {
+            position: absolute;
+            top:30px;
+            left: 20px;
+            width: 200px;
+        }
+        div.ddd{
+            box-sizing: initial;
+            width: 200px;
+            height: 200px;
+            border: 5px solid red;
+            background: green;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="ddd"></div>
+    </section>
+    <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">padding</label>
+              <input type="text" class="form-control"  placeholder="padding" id="padding">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">margin</label>
+              <input type="text" class="form-control" placeholder="margin" id="margin">
+            </div>
+            <button type="button" id="one" class="btn btn-default">确定</button>
+          </form>
+
+          <script>
+              var one=document.getElementById('one');
+              var padding=document.getElementById('padding');
+              var margin=document.getElementById('margin');
+              var div =document.querySelector('.ddd');
+              console.log(div);
+              one.onclick=function(){
+                  var pad=padding.value;
+                  var ma=margin.value;
+         
+                  div.style.padding=pad;
+                  div.style.margin=ma;
+              }
+          </script>
+</body>
+</html>

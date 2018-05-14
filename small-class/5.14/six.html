@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        i{
+            background: red;
+        }
+        .on{
+            margin-left: -5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <i>内联元素</i>
+            <i>内联元素</i>
+            <i>内联元素</i>
+            <i>内联元素</i>
+            <i>内联元素</i>
+        </div>
+        <button>使用margin负值消除空格</button>
+        <script>
+            var btn=document.getElementsByTagName('button')[0];
+            var i =document.getElementsByTagName('i');
+            console.log(btn)
+            console.log(i)
+            btn.onclick=function(){
+                for(let j=0;j<i.length;j++){
+                    i[j].classList.toggle('on');
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>

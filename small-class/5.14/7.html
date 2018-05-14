@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    section{
+        padding: 10px;
+        background: #d8d88d;
+    }
+    p{
+        background: blue;
+    }
+    span{
+        border: solid;
+        background: red;
+    }
+    #six {
+        background: yellow;
+        cursor: pointer;
+    }
+    .on{
+        padding: 2em;
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <p>这是一行段落</p>
+        <span>inline水平元素</span>
+        <span id="six">测试的</span>
+        <span>inline水平元素</span>
+        <span>inline水平元素</span>
+        <p>这是一行段落</p>
+    </section>
+    <button>
+        给span添加四个方向的padding
+    </button>
+    <script>
+        var btn=document.querySelector('button');
+        var s=document.getElementById('six');
+        btn.onclick=function(){
+            s.classList.toggle('on');
+        }
+        s.onclick=function(){
+            alert('点击的范围增加了')
+        }
+    </script>
+</body>
+</html>

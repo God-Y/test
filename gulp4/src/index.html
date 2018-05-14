@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- build:css css/combined.css -->
+    <link href="css/one.css" rel="stylesheet">
+    <link href="css/two.css" rel="stylesheet">
+    <!-- endbuild -->
     <style>
-        .clearfix::after,.clearfix::before{
-            content: "";
-            display: block;
-            height: 0;
-        }
-        .clearfix::after{
-            clear: both;
-        }
         div{
-            /* float: left; */
+            width: 100px;
+            margin: 100px auto;
+           
+            word-spacing: -5px;
         }
-        span{
-            float: left;
-            width: 300px;
-            height: 300px;
+        span {
+            letter-spacing: 0;
             background: red;
         }
     </style>
-</head> 
+</head>
+
 <body>
-    <div >
-        <span></span>
+    <div>
+        <select name="" id="">
+            <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option>
+        </select>
+        <select name="" id="">
+            <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10"></textarea><i>1</i>
     </div>
-  
-    <script src="js/two.js"></script>
+    <!-- build:js scripts/combined.js -->
+    <script type="text/javascript" src="js/one.js"></script>
+    <script type="text/javascript" src="js/two.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>

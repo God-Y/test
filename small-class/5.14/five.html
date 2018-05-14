@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section{
+            position: relative;
+            padding: 10px;
+            background: #d8d8d8;
+        }
+        .one {
+            height: 100px;
+            background: red;
+        }
+        .two {
+            width: 500px;
+            height: 300px;
+            background: green;
+        }
+        .aaaa{
+            margin:  0 auto;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 80px;
+        }
+        .oooo{
+            height: 400px;
+        }
+        div.five{
+            position: absolute;
+            top:0;
+            left:0;
+            right: 0;
+            bottom: 0;
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            background: green;
+        }
+        .sl{
+            width: 200px;
+            height: 200px;
+            margin:auto;
+            background: red;
+        }
+        .tttt {
+            width: 400px;
+            height: 200px;
+            background: red;
+            margin-left: 100px;
+            margin-right: auto;
+        }
+        .ios{
+            width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>关于margin：auto,不设置width,自动平铺</h1>
+    <section>
+        <div class="one"></div>
+    </section>
+    <h1>关于margin：auto 和块级元素宽度设置,剩余空间分配</h1>
+    <section class="ios">
+        <div class="tttt">
+            父级宽度1200px;子级宽度400px,子级的margin-left的为100px
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="two">
+        </div>
+    </section>
+    <button id="a">设置绿盒子margin:auto</button>
+    <hr />
+    <section class="oooo">
+        <div class="five"></div>
+    </section>
+    <hr />
+    <h1>为什么竖直方向的的auto无效</h1>
+    <section class="oooo">
+        <div class="sl"></div>
+    </section>
+    <script >
+        var a=document.getElementById('a');
+        var b=document.querySelector('.two');
+        a.onclick=function(){
+            b.classList.toggle('aaaa');
+        }
+    </script>
+</body>
+</html>

@@ -1,60 +1,268 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        div{
+    <style type="text/css">
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul li {
             float: left;
-            margin: 20px;
-            width: 200px;
-            height: 200px;
-            padding:20px;
-            border: 10px dotted green;
-            background-color: red;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #wrapper {
+            position: relative;
+            margin: 0 auto;
+            width: 1280px;
+            height: 500px;
+        }
+
+        #imgs {
+            width: 1280px;
+            height: 100%;
+            overflow: hidden;
+            float: left;
             position: relative;
         }
-        .border{
-            background-clip: border-box；
-        }
-        .padding{
-            background-clip: padding-box;
-        }
-        .content{
-            background-clip: content-box;
-        }
-        
-        .solid{
-            border: 10px solid;
-        }
-        h1{
-            text-align: center;
-        }
-        .container{
-            overflow: hidden;
-        }
-        span{
+
+        #imgs ul {
             position: absolute;
-            top:-40px;
-            left: 70px;
+            z-index: 1;
+            width: 7680px;
+            height: 400px;
+            left: -1280px;
+        }
+
+        img {
+            width: 1280px;
+            height: 400px;
+        }
+
+        #nav {
+            width: 100px;
+            height: 20px;
+            float: left;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 5;
+        }
+
+        #nav ul li a {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            display: inline-block;
+            background: #FFF;
+            border-radius: 10px;
+            margin-right: 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #preous,
+        #next {
+            width: 100px;
+            background: #000;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            height: 80px;
+            line-height: 80px;
+            position: absolute;
+            top: 50%;
+            color: #FFF;
+            z-index: 3;
+        }
+
+        #preous {
+            left: 0px;
+        }
+
+        #next {
+            right: 0px;
+        }
+
+        #nav ul li a.current {
+            background: red;
+            color: #FFF;
+        }
+
+        #nav ul li a {
+            background: #FFF;
+            color: #000;
         }
     </style>
 </head>
+
 <body>
-    <section class="container">
-        <h1>边框为虚线</h1>
-        <div class="default"><span>默认值</span></div>
-        <div class="border"><span>border-box</span></div>
-        <div class="padding"><span>padding-box</span></div>
-        <div class="content"><span>content-box</span></div>
-</section>
+    <div id="wrapper">
+        <div id="imgs">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="img/head-4.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/head-1.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/head-2.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/head-3.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/head-4.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/head-1.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div id="nav">
+            <ul>
+                <li>
+                    <a class="current">1</a>
+                </li>
+                <li>
+                    <a>2</a>
+                </li>
+                <li>
+                    <a>3</a>
+                </li>
+                <li>
+                    <a>4</a>
+                </li>
+            </ul>
+        </div>
+        <div id="preous">*</div>
+        <div id="next">*</div>
+    </div>
+
+    <script>
+        let log = console.log;
+        var wrap=document.getElementById('wrapper');
+        var imgs_div = document.getElementById("imgs");
+        var nav_div = document.getElementById("nav");
+        //获取到图片轮播的ul对象数组  
+        var imgs = imgs_div.getElementsByTagName("ul")[0];
+        //获取到远点的ul对象数组  
+        var nav = nav_div.getElementsByTagName("ul")[0];
+        var li = nav.getElementsByTagName('li');
+        //上一个  
+        var prev = document.getElementById("preous");
+        //下一个  
+        var next = document.getElementById("next");
     
-    <h1>边框为实线</h1>
-    <div class="default solid"><span>默认值</span></div>
-    <div class="border solid"><span>border-box</span></div>
-    <div class="padding solid"><span>padding-box</span></div>
-    <div class="content solid"><span>content-box</span></div>
+        // log(nav_div);
+        // log(imgs)
+        // log(nav)
+        // log(prev)
+        // log(next)
+        log(li);
+        var index=1;
+        function btnshow(){
+            for(let i=0;i<li.length;i++){
+                li[i].children[0].classList.remove('current');
+            }
+            li[index-1].children[0].classList.add('current');
+
+        }
+        btnshow();
+        prev.onclick=function(){
+            circleLeft(1280);
+            index -=1;
+            if(index<1){
+                index=4;
+            }
+            btnshow()
+        }
+        next.onclick=function(){
+            circleLeft(-1280);
+            index +=1;
+            if(index >4){
+                index=1;
+            }
+            btnshow();
+        }
+        function circleLeft(left){
+           
+            var leftValue=imgs.offsetLeft;
+            var newValue = leftValue + left ;
+            if(newValue >-1280){
+                donghua(-5120);
+            }else if(newValue < -5120){
+                donghua(-1280);
+            }else{
+                donghua(newValue);
+            }
+           
+        }
+        var animTimer;
+        function donghua (newValue){
+            clearInterval(animTimer);
+            animTimer=setInterval(function(){
+                imgs.style.left=imgs.offsetLeft +(newValue-imgs.offsetLeft)/10 +'px';
+                if(imgs.offsetLeft -newValue <10 && imgs.offsetLeft-newValue >-10){
+                    clearInterval(animTimer);
+                    imgs.style.left=newValue;
+                }
+            },20)
+        }
+
+        var circleImgs;
+       function play(){
+           circleImgs= setInterval(function(){
+            next.onclick();
+           },1000);       
+        }
+        play();
+        wrap.onmousemove=function(){
+            clearInterval(circleImgs);
+        }
+        wrap.onmouseout=play;
+//         function donghua(offset){  
+//         clearInterval(animTimer);  
+    
+//         animTimer=setInterval(function(){  
+//              //动画原理： 盒子本身的位置 + 步长  
+//              imgs.style.left=imgs.offsetLeft + (offset-imgs.offsetLeft)/10 + "px";  
+//              console.log(imgs.style.left    );
+//               //因为采用的动画原理计算方法，得到的值不可能精确到我们需要偏移的像素单位上，所以我这里判断，在还有20px的时候，就让动画停止。  
+//              if(imgs.offsetLeft-offset>-10&&imgs.offsetLeft-offset<10){  
+//                   imgs.style.left=offset+"px";  
+//                   clearInterval(animTimer);          
+//              }  
+//         },20);  
+      
+//    }  
+
+    </script>
+
 </body>
+
 </html>

@@ -198,3 +198,46 @@ var log = console.log;
     // log(lastExample());
 
 }
+
+//执行环境和变量对象
+// 第一步页面载入创全局执行环境global executing context和全局活动象
+// 定义全局[[scope]],只含有Window对象
+// 扫描全局的定义变量及函数对象:color【undefined】、changecolor【FD创建changecolor的[[scope]]，
+//此时里面只含有全局活动对象,加入到window中，所以全局变量和全局函数对象都是做为window的属性定义的。
+// 程序已经定义好所以在此执行环境内任何位置都可以执行changecolor(),color也已经被定义，但是它的值是undefined
+ 
+// 第二步color赋值"blue"
+var color = "blue";
+ 
+// 它是不需要赋值的，它就是引用本身
+function changecolor() {
+ // 第四步进入changecolor的执行环境
+ // 复制changecolor的[[scope]]到scope chain
+ // 创建活动对象，扫描定义变量和定义函数，anothercolor【undefined】
+ //和swapcolors【FD创建swapcolors的[[scope]]加入changecolor的活动对象和全局活动对象】加入到活动对象,
+ //活动对象中同时还要加入arguments和this
+ // 活动对象推入scope chain 顶端
+ // 程序已经定义好所以在此执行环境内任何位置都可以执行swapcolors(),anothercolor也已经被定义好，但它的值是undefined
+  
+ // 第五anothercolor赋值"red"
+ var anothercolor = "red";
+  
+ // 它是不需要赋值的，它就是引用本身
+ function swapcolors() {
+  // 第七步进入swapcolors的执行环境，创建它的活动对象
+  // 复制swapcolors的[[scope]]到scope chain
+  // 扫描定义变量和定义函数对象，活动对象中加入变量tempcolor【undefined】以及arguments和this
+  // 活动对象推入scope chain 顶端
+   
+  // 第八步tempcolor赋值anothercolor,anothercolor和color会沿着scope chain被查到，并继续往下执行
+  var tempcolor = anothercolor;
+   anothercolor = color;
+   color = tempcolor; 
+ }
+ 
+ // 第六步执行swapcolors,进入其执行环境
+ swapcolors();
+}
+ 
+// 第三步执行changecolor,进入其执行环境
+changecolor();
